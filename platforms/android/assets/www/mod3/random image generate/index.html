@@ -1,0 +1,65 @@
+<html>
+
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="effect.css">
+</head>
+
+<body>
+	<script type="text/javascript" charset="utf-8" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jquery-ui.js"></script>
+	<script type="text/javascript" charset="utf-8" src="animate.js"></script>
+	<div id="name1"></div>
+	<div id="name2"></div>
+
+	<div class="alphabet1"></div>
+	<div class="alphabet2"></div>
+	<div class="bubble1" onClick="display()"><img src="red-balloon.png" /></div>
+	<script type="text/javascript" charset="utf-8" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		var textArray = [
+			'"A.png"',
+			'"B.png"',
+			'"C.png"',
+			'"D.png"',
+			'"E.png"',
+			'"F.png"',
+			'"G.png"',
+			'"H.png"',
+			'"I.png"',
+			'"J.png"',
+			'"K.png"',
+			'"L.png"',
+			'"M.png"',
+			'"N.png"',
+			'"O.png"',
+			'"P.png"',
+			'"Q.png"',
+			'"R.png"',
+			'"S.png"',
+			'"T.png"',
+			'"U.png"',
+			'"V.png"',
+			'"W.png"',
+			'"X.png"',
+			'"Y.png"',
+			'"Z.png"'
+		];
+		var randomName1 = Math.floor((Math.random() * 100) % 26);
+		var randomName2 = Math.floor((Math.random() * 100) % 26);
+
+		function display() {
+		    var imgStr1 = '<img src=' + textArray[randomName1] + ' alt = "">';
+			var imgStr2 = '<img src=' + textArray[randomName2] + ' alt = "">';
+			document.getElementById('name1').src = textArray[randomName1];
+			document.getElementById('name2').src = textArray[randomName2];
+			document.write(imgStr1);
+			document.write(imgStr2);
+			document.close();
+		}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+html, body{
+	height:100%;
+	vertical-align: middle;
+	background-color: #570303;
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+.ui-content {
+    background-repeat:no-repeat;
+    background-size:contain;  
+    background-position: center center;
+}
+
+.alphball {
+	height: 100%;
+	vertical-align: middle;
+	position: center;
+}
+
+.balloon {
+	width: 30%;
+	position: absolute;
+	top: 30%;
+	bottom: 30%;
+}
+
+#balloon1 {
+	left: 10%;
+}
+
+#balloon2 {
+	right: 10%;
+}
+
+.alphabet {
+	width: 30%;
+	position: absolute;
+	top: 30%;
+	bottom: 30%;
+}
+
+#alphabet1 {
+	left: 10%;
+}
+
+#alphabet2 {
+	right: 10%;
+}
+
+.nextarrow {
+	right: 2%;
+	bottom: 2%;
+	float: bottom;
+	position: fixed;
+}
+
+.complete {
+	top: 50%;
+	left: 50%;
+}

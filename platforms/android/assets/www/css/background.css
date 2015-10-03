@@ -1,0 +1,84 @@
+html, body {
+height:100%;
+vertical-align: middle;
+background-color: #570303;
+background-image: url(../img/background.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+-webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  text-align: center;
+-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+.ui-content {
+    background-repeat:no-repeat;
+    background-size:contain;  
+    background-position: center center;
+}
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.topfix{
+position: fixed;
+top: 2%;
+right: 2%;
+width: 8%;
+max-width: 50px;
+}
+
+.topfix:hover{
+width: 10%;
+max-width: 60px;
+}
+
+.bottomleftfix{
+position: fixed;
+bottom: 2%;
+left: 2%;
+width: 10%;
+max-width: 50px;
+}
+
+.bottomleftfix:hover{
+width: 12%;
+max-width: 60px;
+}
+
+.bottomrightfix{
+position: fixed;
+bottom: 2%;
+right: 2%;
+width: 10%;
+max-width: 50px;
+}
+
+.bottomrightfix:hover{
+width: 12%;
+max-width: 60px;
+}
+
+.menu{
+height: 100%;
+vertical-align: middle;
+position: center;
+}
+
+.button{
+vertical-align: middle;
+width: 45%;
+margin: 5%;
+position: center;
+}
+
+.button:hover{
+margin: 5%;
+width: 55%;
+}

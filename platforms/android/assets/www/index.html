@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<HTML>
+
+	<HEAD>
+		<TITLE>Fun & Learn</TITLE>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8">
+		        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        //function onDeviceReady() {
+        //    playAudio("/android_asset/www/audio/a1.mp3");
+        //}
+
+        // Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
+
+// Play audio
+        //
+        function playAudio(src) {
+            // Create Media object from src
+            my_media = new Media(src, onSuccess, onError);
+
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+// error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+        }
+
+ // Pause audio
+        //
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        //
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+// onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
+
+        // Set audio position
+        //
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }
+
+</script>
+
+		<link rel="stylesheet" type="text/css" href="css/background.css">
+		<style>
+		body {background-image: url("res/screen/android/screen-xhdpi-landscape.jpg");}
+		</style>
+		<script src="js/zepto.js"></script>
+		<script src="js/event.js"></script>
+		<script src="js/fx.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/html5audio.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.0, user-scalable=no" />
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<script type="text/javascript" charset="utf-8">
+		
+			function pressImage(id,img){
+				document.getElementById(id).src=img
+			}
+			function releaseImage(id,img){
+				document.getElementById(id).src=img
+			}
+			function doOnOrientationChange()
+			{
+			switch(window.orientation) 
+			{
+			case -90:
+			case 90:
+			document.body.style.backgroundImage="url('res/screen/android/screen-xhdpi-landscape.jpg')";
+			break; 
+			default:
+			document.body.style.backgroundImage="url('res/screen/android/screen-xhdpi-portrait.jpg')";
+			break; 
+		}
+	}
+	
+	window.addEventListener('orientationchange', doOnOrientationChange);
+	// Initial execution if needed
+	doOnOrientationChange();
+	function tryExit(){
+	    var x;
+		if (confirm("Do you want to exit?") == true) {
+			navigator.app.exitApp();
+			} else {
+			//Do nothing
+		}
+	}
+		function getPhoneGapPath() {
+		var path = window.location.pathname;
+		path = path.substr(0, path.indexOf("/www/") + 5);
+		return 'file://' + path;
+	};
+	statrfunct1()
+	{
+window.location="mod3/index.html"; 
+}
+	</script>
+	
+	</HEAD>
+	<BODY background="" class="platform-android platform-cordova platform-webview">
+	<audio id="clickSound" src="res/click.mp3" type="audio/mpeg" ></audio>
+
+	<p class="alignright">
+		<img id="cross"
+			src="img/cross.png" class="topfix"
+			onMouseOver="pressImage(this.id,'img/cross_pressed.png'); tryExit()"
+			onMouseOut="releaseImage(this.id,'img/cross.png')"
+			alt="Cross"></a>
+	</p>
+	<div class="menu">
+	<p align="center">
+		<a href="mod1/index.html" >
+		<img id="alphabets"
+			src="img/alphabets.png" class="button"
+			onClick="statrfunct1();playAudio('clickSound');pressImage(this.id,'img/alphabets_pressed.png');"
+			onMouseOut="releaseImage(this.id,'img/alphabets.png')"
+			alt="Alphabets"></a>
+	</p>
+
+	<p align="center">
+		<img id="abcsong"
+			src="img/abc_song.png" class="button"
+			onClick="alert('Coming Soon!')"
+			></a>
+	</p>
+	
+	<p align="center">
+		<img id="activity"
+			src="img/activity_button.png" class="button"
+			onClick="alert('Coming Soon!')"
+			onMouseOver="pressImage(this.id,'img/activity_button_pressed.png')"
+			onMouseOut="releaseImage(this.id,'img/activity_button.png')"
+			alt="Activity"></a>
+	</p>
+	</div>
+	<script>
+	function playAudio(id) {
+	alert('hi');
+    var audioElement = document.getElementById(id);
+    var url = audioElement.getAttribute('src');
+    var my_media = new Media(url,
+            // success callback
+             function () { console.log("playAudio():Audio Success"); },
+            // error callback
+             function (err) { console.log("playAudio():Audio Error: " + err); }
+    );
+           // Play audio
+    my_media.play();
+}
+			$('.button').anim({ opacity: 1.0, scale: '1.3', rotateX: '360deg', translate3d: '0px, 0px, 100px'}, 2, 'ease-out'); 
+	</script>
+
+	<p class="alignleft">
+		<a href="" >
+		<img id="settings"
+			src="img/settings.png" class="bottomleftfix"
+			onMouseOver="pressImage(this.id,'img/settings_pressed.png')"
+			onMouseOut="releaseImage(this.id,'img/settings.png')"
+			alt="Settings"></a>
+	</p>
+	<p class="alignright">
+		<a href="" >
+		<img id="help"
+			src="img/help.png" class="bottomrightfix"
+			onMouseOver="pressImage(this.id,'img/help_pressed.png')"
+			onMouseOut="releaseImage(this.id,'img/help.png')"
+			alt="Settings"></a>
+	</p>
+	</BODY>
+</HTML>
